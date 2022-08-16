@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+typedef long long ll;
+typedef double db;
+const long long mod = 1e9 + 7;
+#define test() int t; cin >> t; while(t--)
+
+
+int main(){
+	test(){
+		int n, k;
+		cin >> n >> k;
+		int a[n];
+		vector<int> b;
+		for(int i = 0; i < n ; i++){
+			cin >> a[i];
+			b.push_back(a[i]);
+		}
+		sort(b.begin(), b.end());
+		int index = 0;
+		for(int i = 0; i < n; i++){
+			if(b[i] == k){
+				index = i;
+			}
+		}
+		int res = 0;
+		for(int i = 0; i <= index; i++){
+			if(a[i] != b[i] && a[i] > k){
+				res++;
+			}
+		}
+		cout << res << endl;
+	}
+}
